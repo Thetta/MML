@@ -1,0 +1,37 @@
+{
+  "name": "MML",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "github": "git add -A && git commit -m \"fixes\" && git push origin master"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^0.8.7",
+    "bignumber": "^1.1.0",
+    "core-js": "^2.5.1",
+    "filesystem": "^1.0.1",
+    "flow-inspector": "^1.1.1",
+    "fs": "0.0.1-security",
+    "fs-extra": "^3.0.1",
+    "identicon": "^2.1.1",
+    "kbpgp": "^2.0.76",
+    "md5": "^2.2.1",
+    "moment": "^2.18.1",
+    "path": "^0.12.7",
+    "solc": "^0.4.11",
+    "web3": "^0.18.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
+}
