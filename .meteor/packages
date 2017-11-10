@@ -2,7 +2,9 @@ meteor-base
 #mongo@1.3.0
 blaze-html-templates
 reactive-var@1.0.11
-jquery@1.11.10
+
+jquery
+
 #email@1.2.3
 #http@1.3.0
 
@@ -21,7 +23,6 @@ planettraining:material-design-icons-font
 meteorhacks:npm
 cosmos:browserify
 
-twbs:bootstrap
 summernote:summernote
 momentjs:moment
 
@@ -36,8 +37,23 @@ fortawesome:fontawesome
 mizzao:jquery-ui
 
 flemay:less-autoprefixer
-fourseven:scss
+#fourseven:scss
 juliancwirko:postcss 
+
+komorebi:waves
+
+#jorisroling:salvattore
+rcy:nouislider
+selaias:meteor-simpleweather
+kevohagan:sweetalert
+verron:autosize
+mrt:chosen-package
+eonasdan:bootstrap-datetimepicker
+fullcalendar:fullcalendar
+mrt:jquery-mousewheel
+zenniz:jquery-placeholder
+jss:sparkline
+
 #clinical:fonts
 
 #chart:chart
