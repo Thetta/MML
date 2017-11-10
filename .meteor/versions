@@ -92,3 +92,5 @@ url@1.1.0
 webapp@1.4.0
 webapp-hashing@1.0.9
 zardak:preludels@0.1.0
+force-ssl@1.0.15
+force-ssl-common@1.0.15
