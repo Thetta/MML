@@ -419,6 +419,11 @@ template \layout -> html lang:\en,
 @notify = (message, type)~>
 
 Template.layout.rendered=->
+
+	$(\.btn).addClass \waves-effect
+	
+	if $(\.lightbox)?0 => $(\.lightbox)?0?lightGallery!
+
 	$('body').scrollTop state.get \scr-top
 	alertify.set delay:2000 
 	# alertify.log "Hello, #{drop(20, web3?eth?defaultAccount||'')||'Anonymous'}!"
