@@ -428,16 +428,6 @@ template \layout -> html lang:\en,
 
 
 Template.layout.rendered=->
-<<<<<<< HEAD
-
-	# $(\.btn).addClass \waves-effect
-	
-	# if $(\.lightbox).0 
-	# 	$(\.lightbox).lightGallery!
-=======
-	# Waves.attach \.btn  ['waves-button']
-	$(\.btn).addClass \waves-effect
->>>>>>> d5c426e44008a8caf6574edbc2b828e9e5ffde52
 
 	$('body').scrollTop state.get \scr-top
 	alertify.set delay:2000 
@@ -447,7 +437,6 @@ Template.layout.rendered=->
 		$('.page-loader').fadeOut()
 	), 1000
 
-<<<<<<< HEAD
 	$('.sub-menu.toggled').find('ul').attr \style 'display:block'
 
 
@@ -924,3 +913,10 @@ Template.layout.rendered=->
 	easyPieChart 'easy-pie-4', '#fff', 'rgba(0,0,0,0.08)', 'rgba(0,0,0,0)', 2, 75
 
 
+@activeQ=->
+	if Router.current!?route?getName! == it => \active
+	else null
+
+@sub-menu-activeQ=->
+	if elem-index(Router.current!?route?getName!, it) > -1 => \toggled
+	else ''
