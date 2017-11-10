@@ -419,6 +419,9 @@ template \layout -> html lang:\en,
 @notify = (message, type)~>
 
 Template.layout.rendered=->
+	# Waves.attach \.btn  ['waves-button']
+	$(\.btn).addClass \waves-effect
+
 	$('body').scrollTop state.get \scr-top
 	alertify.set delay:2000 
 	# alertify.log "Hello, #{drop(20, web3?eth?defaultAccount||'')||'Anonymous'}!"

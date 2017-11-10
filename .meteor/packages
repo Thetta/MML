@@ -36,8 +36,11 @@ fortawesome:fontawesome
 mizzao:jquery-ui
 
 flemay:less-autoprefixer
-fourseven:scss
+#fourseven:scss
 juliancwirko:postcss 
+
+komorebi:waves
+
 #clinical:fonts
 
 #chart:chart

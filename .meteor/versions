@@ -31,7 +31,7 @@ enkogu:livescript-compiler@0.2.2
 ethereum:web3@0.18.3
 flemay:less-autoprefixer@1.2.0
 fortawesome:fontawesome@4.7.0
-fourseven:scss@4.5.4
+fourseven:scss@3.13.0
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -48,6 +48,7 @@ iron:router@1.1.2
 iron:url@1.1.0
 jquery@1.11.10
 juliancwirko:postcss@1.2.0
+komorebi:waves@0.7.4
 livedata@1.0.18
 logging@1.1.19
 meteor@1.8.1
