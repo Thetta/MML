@@ -428,11 +428,16 @@ template \layout -> html lang:\en,
 
 
 Template.layout.rendered=->
+<<<<<<< HEAD
 
 	# $(\.btn).addClass \waves-effect
 	
 	# if $(\.lightbox).0 
 	# 	$(\.lightbox).lightGallery!
+=======
+	# Waves.attach \.btn  ['waves-button']
+	$(\.btn).addClass \waves-effect
+>>>>>>> d5c426e44008a8caf6574edbc2b828e9e5ffde52
 
 	$('body').scrollTop state.get \scr-top
 	alertify.set delay:2000 
@@ -442,6 +447,7 @@ Template.layout.rendered=->
 		$('.page-loader').fadeOut()
 	), 1000
 
+<<<<<<< HEAD
 	$('.sub-menu.toggled').find('ul').attr \style 'display:block'
 
 
@@ -918,103 +924,3 @@ Template.layout.rendered=->
 	easyPieChart 'easy-pie-4', '#fff', 'rgba(0,0,0,0.08)', 'rgba(0,0,0,0)', 2, 75
 
 
-
-
-
-Template.layout.events do
-
-	'click a':(event,target)->
-		event.prevent-default!
-		state.set \scr-top $('body').scrollTop()
-
-		if $(event.target).attr \href
-			if $(event.target).attr(\href)[0] != \#
-				Router.go $(event.target).attr \href
-
-
-	'click #btn-color-targets>.btn': (event, target)->
-		color = $(event.target).data('target-color')
-		$('#modalColor').attr 'data-modal-color', color
-
-	'click .animation-demo .btn':->
-		animation = $(this).text()
-		cardImg = $(this).closest('.card').find('img')
-		if animation == 'hinge'
-			animationDuration = 2100
-		else
-			animationDuration = 1200
-		cardImg.removeAttr 'class'
-		cardImg.addClass 'animated ' + animation
-		setTimeout (->
-			cardImg.removeClass animation
-		), animationDuration
-
-	'click .notifications > div > .btn':(event,target)->
-		event.preventDefault()
-		nFrom = $(this).attr('data-from')
-		nAlign = $(this).attr('data-align')
-		nIcons = $(this).attr('data-icon')
-		nType = $(this).attr('data-type')
-		nAnimIn = $(this).attr('data-animation-in')
-		nAnimOut = $(this).attr('data-animation-out')
-		notify nFrom, nAlign, nIcons, nType, nAnimIn, nAnimOut
-
-	'click #sa-basic':->
-		swal 'Here\'s a message!'
-
-	'click #sa-title':->
-		swal 'Here\'s a message!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis'
-
-	'click #sa-success':->
-		swal 'Good job!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis', 'success'
-
-	'click #sa-warning' :->
-		swal {
-			title: 'Are you sure?'
-			text: 'You will not be able to recover this imaginary file!'
-			type: 'warning'
-			showCancelButton: true
-			confirmButtonColor: '#DD6B55'
-			confirmButtonText: 'Yes, delete it!'
-			closeOnConfirm: false
-		}, ->
-			swal 'Deleted!', 'Your imaginary file has been deleted.', 'success'
-
-	'click #sa-params':->
-		swal {
-			title: 'Are you sure?'
-			text: 'You will not be able to recover this imaginary file!'
-			type: 'warning'
-			showCancelButton: true
-			confirmButtonColor: '#DD6B55'
-			confirmButtonText: 'Yes, delete it!'
-			cancelButtonText: 'No, cancel plx!'
-			closeOnConfirm: false
-			closeOnCancel: false
-		}, (isConfirm) ->
-			if isConfirm
-				swal 'Deleted!', 'Your imaginary file has been deleted.', 'success'
-			else
-				swal 'Cancelled', 'Your imaginary file is safe :)', 'error'
-
-	'click #sa-image': ->
-		swal do
-			title: 'Sweet!'
-			text: 'Here\'s a custom image.'
-			imageUrl: 'img/thumbs-up.png'
-
-
-	'click #sa-close': ->
-		swal do
-			title: 'Auto close alert!'
-			text: 'I will close in 2 seconds.'
-			timer: 2000
-			showConfirmButton: false
-
-@activeQ=->
-	if Router.current!?route?getName! == it => \active
-	else null
-
-@sub-menu-activeQ=->
-	if elem-index(Router.current!?route?getName!, it) > -1 => \toggled
-	else ''
