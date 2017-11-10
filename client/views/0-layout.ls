@@ -433,7 +433,7 @@ Template.layout.rendered=->
 
 
 	# $('.sub-menu.toggled').next().slideToggle(200);
-	$('.sub-menu.toggled').find('ul').attr \style 'display:block'
+	# $('.sub-menu.toggled').find('ul').attr \style 'display:block'
 	# $this.parent().toggleClass('toggled');
 
 
