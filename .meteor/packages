@@ -48,7 +48,7 @@ iron:router
 reactive-dict@1.2.0
 enkogu:livescript-compiler@0.2.2
 zardak:preludels
-standard-minifier-js@2.2.0
+#standard-minifier-js@2.2.0
 #shell-server@0.3.0
 #minimongo@1.4.0
 #force-ssl@1.1.0
