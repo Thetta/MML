@@ -2,11 +2,9 @@ meteor-base
 #mongo@1.3.0
 blaze-html-templates
 reactive-var@1.0.11
-<<<<<<< HEAD
+
 jquery
-=======
-#jquery@1.11.10
->>>>>>> d5c426e44008a8caf6574edbc2b828e9e5ffde52
+
 #email@1.2.3
 #http@1.3.0
 
@@ -43,7 +41,7 @@ flemay:less-autoprefixer
 juliancwirko:postcss 
 
 komorebi:waves
-<<<<<<< HEAD
+
 #jorisroling:salvattore
 rcy:nouislider
 selaias:meteor-simpleweather
@@ -55,9 +53,6 @@ fullcalendar:fullcalendar
 mrt:jquery-mousewheel
 zenniz:jquery-placeholder
 jss:sparkline
-
-=======
->>>>>>> d5c426e44008a8caf6574edbc2b828e9e5ffde52
 
 #clinical:fonts
 
