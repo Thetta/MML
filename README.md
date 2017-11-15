@@ -4,12 +4,18 @@
 [ ![Codeship Status for Thetta/App](https://app.codeship.com/projects/28175030-a82b-0135-0cfa-06a3dd771e06/status?branch=master)](https://app.codeship.com/projects/256033)
 
 ### master (production)
+[https://app.thetta.io](https://app.thetta.io)
+
 ![Heroku](https://heroku-badge.herokuapp.com/?app=thetta-app)
 
 ### dev (for testing)
+[https://test.thetta.io](https://test.thetta.io)
+
 ![Heroku](https://heroku-badge.herokuapp.com/?app=thetta-app-test)
 
 ### dev2 (for development)
+[https://test2.thetta.io](https://test2.thetta.io)
+
 ![Heroku](https://heroku-badge.herokuapp.com/?app=thetta-app-test2)
 
 ## How to deploy to Heroku
