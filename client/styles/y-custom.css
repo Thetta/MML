@@ -84,3 +84,8 @@ svg{
 	margin-left: 57px;
 
 }
+
+.preloader{
+	position: absolute;
+	bottom: 30% !important;
+}

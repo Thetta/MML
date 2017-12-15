@@ -2,8 +2,8 @@ T \bounties ->  section id:'content', d \.container d \.card,
 	bounties-card-header!
 
 	div class:'list-group lg-alt lg-even-black',
-		for it, number in state.get(\items)||[]
-			item-layout(it,++number)
+		for it in items!||[]
+			item-layout it
 
 
 	ul class:'pagination lg-pagination',
@@ -29,8 +29,8 @@ T \bounties ->  section id:'content', d \.container d \.card,
 				a href:'' "data-toggle":'dropdown' "aria-expanded":'false',
 					i class:'zmdi zmdi-more-vert'
 				ul class:'dropdown-menu dropdown-menu-right',
-					li a href:'', "Check bounty contract address on etherscan"
-					li a href:'', "Check creator address on etherscan"
+					li a href:"https:/etherscan.io/address/#{it?address}" target:\__blank, "Check bounty contract address on etherscan"
+					li a href:"https:/etherscan.io/address/#{it?creator}" target:\__blank, "Check creator address on etherscan"
 					li a href:'', "Claim as complited"
 
 
@@ -42,28 +42,11 @@ T \bounties ->  section id:'content', d \.container d \.card,
 			it?task_name
 		
 		ul class:'lgi-attrs',
-			li "Created: 2017-10-10 13:54"
+			# li "Created: 2017-10-10 13:54"
 			li "Status: #{it?status}"
-			li "Bounty: #{it?balance} ETH"
+			li "Type: #{it?type}"
+			li "Balance: #{it?balance} ETH"
 			li "Days left: #{it?days_left}"
-
-# @item-layout=(it, number)-> 
-# 	if currentID! ~= number => cls = \current
-# 	else cls = ''
-# 	link = "/bounties/#{number}" 
-# 	a class:" item rightnav-link #{cls} border-cls" id:"bounty-#{it.id}" href:link,
-# 		d \.header, 
-# 			b  number + '.  ' 
-# 			it?project
-
-# 		d \.message-first,
-# 			div class:"item-layout-logo" name:it?project
-# 			d \.message-text it?task_name
-# 			d \.rating 
-
-# 		d \.message,
-# 			b 'Days left: '
-# 			d \.end-date  it?days_left
 
 
 @items=-> state.get \items
@@ -71,19 +54,17 @@ T \bounties ->  section id:'content', d \.container d \.card,
 @get-bounty-addresses=(cb)->
 	global.out = []
 	get-total-count (err,count)~>
-		n = 0
 		for num in [0 to +count - 1]
-			get-bounty-address num, (err,adr)~> 
-				get-bounty-object adr, (err,res)~> 
-					global.out[n] = res
-					n++
-
+			save-bounty-item num
 		cycle=-> 
 			if (any (-> typeof it == \undefined), out) || !out.length || out.length < count
 				Meteor.setTimeout (->cycle!), 20
 
 			else
-				console.log \items: out 
+				if !global.rerender
+					state.set \items global.out
+					global.rerender := true
+				console.log \items: out
 				cb null, global.out
 		cycle!
 
@@ -126,7 +107,6 @@ T \bounties ->  section id:'content', d \.container d \.card,
 			Meteor.setTimeout (->cycle!), 10
 
 		else 
-			console.log \out: out
 			return cb null, out
 	cycle!
 
@@ -136,18 +116,26 @@ T \bounties ->  section id:'content', d \.container d \.card,
 	web3.eth.contract(bountyItemAbi).at(address).getClaimAddress num cb
 
 
+@save-bounty-item=(n)->
+	get-bounty-address n, (err,adr)~> 
+		console.log \num: n
+		get-bounty-object adr, (err,res)~> 
+			global.out[n] = res
 
 
+
+Template.bounties.created=->
+	global.rerender = false
+	state.set \spec-loading true
 
 Template.bounties.rendered=->
+
 	get-bounty-addresses (err,res)->
-		state.set \items res
-
-
-	map (-> $(it).html jazzicon 50, \0x + drop 15 md5 $(it).attr \name), $ \.bounty-logo
-
-
-
+		$('.page-loader').fadeOut()
+		
 	for it in $ \.bounty-logo
 		$(it).html jazzicon 38, \0x + drop 15 md5 $(it).attr \name
-	map (-> $(it).html jazzicon(38, $(it).attr \name) ), $ \.bounty-logo
+	
+
+Template.bounties.destroyed=->
+	state.set \spec-loading false

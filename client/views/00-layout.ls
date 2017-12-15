@@ -29,7 +29,7 @@ template \layout -> html lang:\en,
 			(~>  SI @lookupTemplate \noMetamask )
 
 			components.page-footer!
-		# components.page-loader!
+		components.page-loader!
 
 
 
@@ -39,10 +39,11 @@ Template.layout.rendered=->
 
 	alertify.set delay:2000 
 	# alertify.log "Hello, #{drop(20, web3?eth?defaultAccount||'')||'Anonymous'}!"
-	
-	Meteor.setTimeout (->
-		$('.page-loader').fadeOut()
-	), 1000
+		
+	if not state.get \spec-loading
+		Meteor.setTimeout (->
+			$('.page-loader').fadeOut()
+		), 500
 
 	$('.sub-menu.toggled').find('ul').attr \style 'display:block'
 
