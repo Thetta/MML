@@ -1,0 +1,1 @@
+T \home -> msg 'Home sweet home' 'Yeeeeah'

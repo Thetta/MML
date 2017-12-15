@@ -72,5 +72,8 @@ zardak:preludels
 ethereum:web3@=0.18.3
 3stack:bignumber
 
-npm-container
+#npm-container
 force-ssl
+
+
+npm-container

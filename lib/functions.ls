@@ -228,40 +228,22 @@
         |> capitalize
 
 
-@get-nickname-symbol=-> switch it
-    | \0 => \o
-    | \1 => \wan
-    | \2 => \too
-    | \3 => \fri
-    | \4 => \fo
-    | \5 => \fai
-    | \6 => \six
-    | \7 => \sev
-    | \8 => \eit
-    | \9 => \nain 
-    | \a => \a
-    | \b => \bi
-    | \c => \ci
-    | \d => \di
-    | \e => \yea
-    | \f => \ef
+@selected-item=(uid,fid,n)-> null
 
+@items=-> []
 
-@get-german-nickname-symbol=-> switch it
-    | \0 => \berg
-    | \1 => \ster
-    | \2 => \effer
-    | \3 => \mann
-    | \4 => \haus
-    | \5 => \witz
-    | \6 => \ner
-    | \7 => \hof
-    | \8 => \baum
-    | \9 => \ling
-    | \a => \zer
-    | \b => \sig
-    | \c => \schel
-    | \d => \schatz
-    | \e => \nitz
-    | \f => \tag
+@current=-> state.get \current
 
+@is-uid=-> Router.current!params?uid
+
+@days-left =-> 
+    end-date = new Date(it).get-time!
+    now-date = new Date!get-time!
+    diff = end-date - now-date
+    if diff <= 0 => return 0
+    out = ceiling diff/(1000*3600*24)    
+
+@Rand=-> Math.round 100*Math.random!
+
+@say =(header, message, onclick)->
+    $(\.space).append '''<div class="dialog-message-wrapper"><div class="dialog-message"><a class="close">x</a><div class="dialog-message-header"> ''' + header+ '''</div><div class="dialog-message-content">''' + message+ '''</div><button class="ok-button" onclick="''' + onclick+ '''">OK</button></div></div>'''

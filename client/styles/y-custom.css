@@ -1,3 +1,86 @@
 
 i.zmdi{
-	font-size: 24px !important}
+	font-size: 24px !important;
+}
+
+
+#content{
+	min-height: 500px !important;
+	z-index: 100 !important;
+	margin-top: 7px;
+}
+
+
+
+.container{
+	z-index: 100 !important;
+}
+
+
+
+.action-header{
+	z-index: 100 !important;	
+	padding-bottom: 0px;
+	padding-top: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 20px;
+
+
+}
+
+
+.msg-content{
+	margin-left: 27px
+}
+
+.hm-profile > a svg {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+h5.lgi-heading{
+	margin-top: 0px;
+	font-weight: bold;
+}
+
+.bounty-logo{
+	padding-top: 1px;
+	border-radius: 5px !important;
+	
+}
+
+svg{
+	position: static !important;
+}
+
+.plus-bounty{
+	position: absolute;
+	/*bottom: 81px;*/
+	right: 25px;
+	z-index: 1000;
+	bottom: 34px;
+	
+	/*width: 38px;*/
+	/*height: 38px;*/
+	/*display: flex;*/
+	/*flex-direction: column;*/
+	/*justify-content: center;*/
+
+
+}
+
+.plus-bounty > i{
+	
+	/*margin-top: -10px;*/
+	/*padding-top: 10px;*/
+
+}
+
+.bounties-card-header > .text{
+	margin-left: 57px;
+
+}

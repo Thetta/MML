@@ -7,6 +7,7 @@ Router.configure do
 	loadingTemplate:  \loading 
 	notFoundTemplate: \notFound
 
-# Router.route('/(.*)' where:\server).get ->
-# 	if (@params.0 == '/') => @response.writeHead(301 Location:\/forecasts).end!
-# 	else @next!
+Router.route('/' where:\server).get ->
+	@response
+		..writeHead(301 Location:\/home)
+		..end!

@@ -1,0 +1,1 @@
+components.pull-right-menu=-> li class:'jazz-logo-li', a class:'jazz-logo' name:web3?eth?defaultAccount, href:''

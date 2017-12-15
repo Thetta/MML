@@ -31,12 +31,11 @@ enkogu:livescript-compiler@0.2.2
 eonasdan:bootstrap-datetimepicker@4.17.42
 ethereum:web3@0.18.3
 flemay:less-autoprefixer@1.2.0
+force-ssl@1.1.0
+force-ssl-common@1.1.0
 fortawesome:fontawesome@4.7.0
 fourseven:scss@3.13.0
-
 fullcalendar:fullcalendar@2.9.0
-
-
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -54,9 +53,7 @@ iron:url@1.1.0
 jquery@1.11.10
 jss:sparkline@2.1.2
 juliancwirko:postcss@1.2.0
-
 kevohagan:sweetalert@1.0.0
-
 komorebi:waves@0.7.4
 livedata@1.0.18
 logging@1.1.19
@@ -107,6 +104,4 @@ verron:autosize@3.0.8
 webapp@1.4.0
 webapp-hashing@1.0.9
 zardak:preludels@0.1.0
-force-ssl@1.0.15
-force-ssl-common@1.0.15
 zenniz:jquery-placeholder@0.0.1

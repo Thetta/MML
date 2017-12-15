@@ -6,16 +6,21 @@ T \notVerified,  -> msg \Error 'Token expired'
 T \voteAccepted, -> msg 'Thank you', 'Your vote is accepted'
 
 T \success,      -> msg \Done! 'Please wait. Action will be completed in the next few minutes', 
-    button class:'ui huge button' onclick:'window.history.back()', 'Go back'
+	button class:'ui huge button' onclick:'window.history.back()', 'Go back'
 
 T \noMetamask,  -> msg 'No Metamask' 'This site requires the Metamask plugin for Google Chrome.',
-    a class:'ui huge button' href:'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn', 'Download Metamask'
+	a class:'btn btn-primary' href:'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn', 'Download Metamask'
 
 @loading=-> msg \Loading 'Please, wait...'
 
-@msg =-> d \.central-message.msg,  
-    d \.header, &0
-    d \.message &1
-    &2||''
+@msg =-> section id:'content', d \.container,
+	d \.c-header h2 &0
+	div id:'c-grid' class:'clearfix msg' data-columns:'',
+		d \.card.msg,
+			d \.card-header h2 &0, small &1
+			d \.msg-content &2 || ''
 
 Template.voteAccepted.onRendered -> $(\nav).addClass \hidden
+
+
+@components = {}
