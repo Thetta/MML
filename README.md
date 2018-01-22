@@ -29,6 +29,7 @@ Please [submit issues here](https://github.com/Thetta/App/projects/1?).
 1. meteor npm start
 
 ## Development Tips
-1. [Wiki home](https://github.com/Thetta/App/wiki)
+1. [Wiki home](https://github.com/Thetta/Wiki/wiki)
+1. [App Wiki](https://github.com/Thetta/App/wiki)
 1. [Application Structure](https://github.com/Thetta/App/wiki/Application-Structure)
 
