@@ -27,8 +27,8 @@ We use Solidity language for smart contracts.
 If you haven't already, come find us in Slack. We want you working on things you're excited about.
 
 Here are some important resources:
-
-  * [Thetta for Developers WIKI](https://github.com/Thetta/App/wiki) will help you,
+  * [Thetta Wiki](https://github.com/Thetta/Wiki/wiki) will help you,
+  * [Thetta App Wiki](https://github.com/Thetta/App/wiki) will help you too,
   * [Our roadmap (TODO)](https://github.com/Thetta/App/wiki/Roadmap) is the 10k foot view of where we're going, and
   * [Tracker](https://github.com/Thetta/App/projects) is our day-to-day project management space.
   * Bugs? [Open new Issue](https://github.com/Thetta/App/issues)
