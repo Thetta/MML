@@ -1,5 +1,7 @@
 # Thetta App
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 Please [submit issues here](https://github.com/Thetta/App/projects/1?).
 
 ## Builds
